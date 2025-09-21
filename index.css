@@ -1,0 +1,469 @@
+
+/* Font imports removed - stylesheets not available */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 222.2 47.4% 11.2%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222.2 84% 4.9%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 222.2 84% 4.9%;
+
+    /* Custom CSS variables for MedicAi brand colors */
+    --cadmium: 60 100% 55%; /* #FDEE1E */
+    --melon: 35 100% 70%; /* #FFB867 */
+    --slate: 60 15% 40%; /* #686653 */
+    --ink: 0 0% 11%; /* #1B1B1B */
+    --mist: 45 25% 91%; /* #EEEDE9 */
+    
+    /* Legacy brand color mappings */
+    --primary-yellow: var(--cadmium);
+    --secondary-amber: var(--melon);
+    --tertiary-beige: var(--mist);
+    --accent-olive: var(--slate);
+    --accent-green: 120 30% 45%; /* #5A8A5A */
+    --accent-brown: 30 25% 35%; /* #6B5B47 */
+    --accent-lime: 75 60% 60%; /* #B8D65C */
+    --accent-magenta: 300 50% 50%; /* #BF40BF */
+    --brand-primary: var(--cadmium);
+    --brand-secondary: var(--melon);
+    --brand-accent: var(--slate);
+    --brand-neutral: var(--mist);
+    --brand-dark: var(--ink);
+
+    /* Tailwind-like shade scales (100 → 10) based on brand palette image */
+    /* Cadmium (yellow) */
+    --cadmium-100: #C8A518;
+    --cadmium-90: #D4B51B;
+    --cadmium-80: #E0C51B;
+    --cadmium-70: #EBD61C;
+    --cadmium-60: #F7E61D;
+    --cadmium-50: #FDEE1E; /* base */
+    --cadmium-40: #FEF68F;
+    --cadmium-30: #FEF8A5;
+    --cadmium-20: #FFFBD2;
+    --cadmium-10: #FFFDE9;
+
+    /* Melon (peach) */
+    --melon-100: #FFB867;
+    --melon-90: #FFBF76;
+    --melon-80: #FFC685;
+    --melon-70: #FFCD96;
+    --melon-60: #FFD4A4;
+    --melon-50: #FFDCB3;
+    --melon-40: #FFE3C2;
+    --melon-30: #FEEAD1;
+    --melon-20: #FFF0E1;
+    --melon-10: #FFF8F0;
+
+    /* Slate (olive slate → mist) */
+    --slate-100: #686653;
+    --slate-90: #7F7C63;
+    --slate-80: #959274;
+    --slate-70: #ACA884;
+    --slate-60: #C2BE95;
+    --slate-50: #D9D4A5;
+    --slate-40: #DDD9B3;
+    --slate-30: #E6E3CE;
+    --slate-20: #EAE8DB;
+    --slate-10: #EEEDE9; /* equals Mist */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Haas Recast Dense', 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: 0.01em;
+    background: hsl(var(--soft-ivory));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Haas Recast Dense', 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: hsl(var(--clean-black));
+  }
+
+  /* Scrolling animation for ticker */
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 15s linear infinite;
+  }
+}
+
+@layer utilities {
+  /* MedicAi Brand Color Utilities */
+  
+  /* New Brand Colors */
+  .bg-cadmium { background-color: hsl(var(--cadmium)); }
+  .bg-melon { background-color: hsl(var(--melon)); }
+  .bg-slate { background-color: hsl(var(--slate)); }
+  .bg-ink { background-color: hsl(var(--ink)); }
+  .bg-mist { background-color: hsl(var(--mist)); }
+  
+  /* Shade Utilities - Background (Cadmium, Melon, Slate) */
+  .bg-cadmium-100 { background-color: var(--cadmium-100); }
+  .bg-cadmium-90 { background-color: var(--cadmium-90); }
+  .bg-cadmium-80 { background-color: var(--cadmium-80); }
+  .bg-cadmium-70 { background-color: var(--cadmium-70); }
+  .bg-cadmium-60 { background-color: var(--cadmium-60); }
+  .bg-cadmium-50 { background-color: var(--cadmium-50); }
+  .bg-cadmium-40 { background-color: var(--cadmium-40); }
+  .bg-cadmium-30 { background-color: var(--cadmium-30); }
+  .bg-cadmium-20 { background-color: var(--cadmium-20); }
+  .bg-cadmium-10 { background-color: var(--cadmium-10); }
+
+  .bg-melon-100 { background-color: var(--melon-100); }
+  .bg-melon-90 { background-color: var(--melon-90); }
+  .bg-melon-80 { background-color: var(--melon-80); }
+  .bg-melon-70 { background-color: var(--melon-70); }
+  .bg-melon-60 { background-color: var(--melon-60); }
+  .bg-melon-50 { background-color: var(--melon-50); }
+  .bg-melon-40 { background-color: var(--melon-40); }
+  .bg-melon-30 { background-color: var(--melon-30); }
+  .bg-melon-20 { background-color: var(--melon-20); }
+  .bg-melon-10 { background-color: var(--melon-10); }
+
+  .bg-slate-100 { background-color: var(--slate-100); }
+  .bg-slate-90 { background-color: var(--slate-90); }
+  .bg-slate-80 { background-color: var(--slate-80); }
+  .bg-slate-70 { background-color: var(--slate-70); }
+  .bg-slate-60 { background-color: var(--slate-60); }
+  .bg-slate-50 { background-color: var(--slate-50); }
+  .bg-slate-40 { background-color: var(--slate-40); }
+  .bg-slate-30 { background-color: var(--slate-30); }
+  .bg-slate-20 { background-color: var(--slate-20); }
+  .bg-slate-10 { background-color: var(--slate-10); }
+  
+  /* Legacy Background Colors */
+  .bg-primary-yellow { background-color: hsl(var(--primary-yellow)); }
+  .bg-secondary-amber { background-color: hsl(var(--secondary-amber)); }
+  .bg-tertiary-beige { background-color: hsl(var(--tertiary-beige)); }
+  .bg-accent-olive { background-color: hsl(var(--accent-olive)); }
+  .bg-accent-green { background-color: hsl(var(--accent-green)); }
+  .bg-accent-brown { background-color: hsl(var(--accent-brown)); }
+  .bg-accent-lime { background-color: hsl(var(--accent-lime)); }
+  .bg-accent-magenta { background-color: hsl(var(--accent-magenta)); }
+  .bg-brand-primary { background-color: hsl(var(--brand-primary)); }
+  .bg-brand-secondary { background-color: hsl(var(--brand-secondary)); }
+  .bg-brand-accent { background-color: hsl(var(--brand-accent)); }
+  .bg-brand-neutral { background-color: hsl(var(--brand-neutral)); }
+  .bg-brand-dark { background-color: hsl(var(--brand-dark)); }
+  
+  /* New Brand Text Colors */
+  .text-cadmium { color: hsl(var(--cadmium)); }
+  .text-melon { color: hsl(var(--melon)); }
+  .text-slate { color: hsl(var(--slate)); }
+  .text-ink { color: hsl(var(--ink)); }
+  .text-mist { color: hsl(var(--mist)); }
+  
+  /* Shade Utilities - Text */
+  .text-cadmium-100 { color: var(--cadmium-100); }
+  .text-cadmium-90 { color: var(--cadmium-90); }
+  .text-cadmium-80 { color: var(--cadmium-80); }
+  .text-cadmium-70 { color: var(--cadmium-70); }
+  .text-cadmium-60 { color: var(--cadmium-60); }
+  .text-cadmium-50 { color: var(--cadmium-50); }
+  .text-cadmium-40 { color: var(--cadmium-40); }
+  .text-cadmium-30 { color: var(--cadmium-30); }
+  .text-cadmium-20 { color: var(--cadmium-20); }
+  .text-cadmium-10 { color: var(--cadmium-10); }
+
+  .text-melon-100 { color: var(--melon-100); }
+  .text-melon-90 { color: var(--melon-90); }
+  .text-melon-80 { color: var(--melon-80); }
+  .text-melon-70 { color: var(--melon-70); }
+  .text-melon-60 { color: var(--melon-60); }
+  .text-melon-50 { color: var(--melon-50); }
+  .text-melon-40 { color: var(--melon-40); }
+  .text-melon-30 { color: var(--melon-30); }
+  .text-melon-20 { color: var(--melon-20); }
+  .text-melon-10 { color: var(--melon-10); }
+
+  .text-slate-100 { color: var(--slate-100); }
+  .text-slate-90 { color: var(--slate-90); }
+  .text-slate-80 { color: var(--slate-80); }
+  .text-slate-70 { color: var(--slate-70); }
+  .text-slate-60 { color: var(--slate-60); }
+  .text-slate-50 { color: var(--slate-50); }
+  .text-slate-40 { color: var(--slate-40); }
+  .text-slate-30 { color: var(--slate-30); }
+  .text-slate-20 { color: var(--slate-20); }
+  .text-slate-10 { color: var(--slate-10); }
+  
+  /* Legacy Text Colors */
+  .text-primary-yellow { color: hsl(var(--primary-yellow)); }
+  .text-secondary-amber { color: hsl(var(--secondary-amber)); }
+  .text-tertiary-beige { color: hsl(var(--tertiary-beige)); }
+  .text-accent-olive { color: hsl(var(--accent-olive)); }
+  .text-accent-green { color: hsl(var(--accent-green)); }
+  .text-accent-brown { color: hsl(var(--accent-brown)); }
+  .text-accent-lime { color: hsl(var(--accent-lime)); }
+  .text-accent-magenta { color: hsl(var(--accent-magenta)); }
+  .text-brand-primary { color: hsl(var(--brand-primary)); }
+  .text-brand-secondary { color: hsl(var(--brand-secondary)); }
+  .text-brand-accent { color: hsl(var(--brand-accent)); }
+  .text-brand-neutral { color: hsl(var(--brand-neutral)); }
+  .text-brand-dark { color: hsl(var(--brand-dark)); }
+  
+  /* New Brand Border Colors */
+  .border-cadmium { border-color: hsl(var(--cadmium)); }
+  .border-melon { border-color: hsl(var(--melon)); }
+  .border-slate { border-color: hsl(var(--slate)); }
+  .border-ink { border-color: hsl(var(--ink)); }
+  .border-mist { border-color: hsl(var(--mist)); }
+  
+  /* Shade Utilities - Border */
+  .border-cadmium-100 { border-color: var(--cadmium-100); }
+  .border-cadmium-90 { border-color: var(--cadmium-90); }
+  .border-cadmium-80 { border-color: var(--cadmium-80); }
+  .border-cadmium-70 { border-color: var(--cadmium-70); }
+  .border-cadmium-60 { border-color: var(--cadmium-60); }
+  .border-cadmium-50 { border-color: var(--cadmium-50); }
+  .border-cadmium-40 { border-color: var(--cadmium-40); }
+  .border-cadmium-30 { border-color: var(--cadmium-30); }
+  .border-cadmium-20 { border-color: var(--cadmium-20); }
+  .border-cadmium-10 { border-color: var(--cadmium-10); }
+
+  .border-melon-100 { border-color: var(--melon-100); }
+  .border-melon-90 { border-color: var(--melon-90); }
+  .border-melon-80 { border-color: var(--melon-80); }
+  .border-melon-70 { border-color: var(--melon-70); }
+  .border-melon-60 { border-color: var(--melon-60); }
+  .border-melon-50 { border-color: var(--melon-50); }
+  .border-melon-40 { border-color: var(--melon-40); }
+  .border-melon-30 { border-color: var(--melon-30); }
+  .border-melon-20 { border-color: var(--melon-20); }
+  .border-melon-10 { border-color: var(--melon-10); }
+
+  .border-slate-100 { border-color: var(--slate-100); }
+  .border-slate-90 { border-color: var(--slate-90); }
+  .border-slate-80 { border-color: var(--slate-80); }
+  .border-slate-70 { border-color: var(--slate-70); }
+  .border-slate-60 { border-color: var(--slate-60); }
+  .border-slate-50 { border-color: var(--slate-50); }
+  .border-slate-40 { border-color: var(--slate-40); }
+  .border-slate-30 { border-color: var(--slate-30); }
+  .border-slate-20 { border-color: var(--slate-20); }
+  .border-slate-10 { border-color: var(--slate-10); }
+  
+  /* Legacy Border Colors */
+  .border-primary-yellow { border-color: hsl(var(--primary-yellow)); }
+  .border-secondary-amber { border-color: hsl(var(--secondary-amber)); }
+  .border-tertiary-beige { border-color: hsl(var(--tertiary-beige)); }
+  .border-accent-olive { border-color: hsl(var(--accent-olive)); }
+  .border-accent-green { border-color: hsl(var(--accent-green)); }
+  .border-accent-brown { border-color: hsl(var(--accent-brown)); }
+  .border-accent-lime { border-color: hsl(var(--accent-lime)); }
+  .border-accent-magenta { border-color: hsl(var(--accent-magenta)); }
+  .border-brand-primary { border-color: hsl(var(--brand-primary)); }
+  .border-brand-secondary { border-color: hsl(var(--brand-secondary)); }
+  .border-brand-accent { border-color: hsl(var(--brand-accent)); }
+  .border-brand-neutral { border-color: hsl(var(--brand-neutral)); }
+  .border-brand-dark { border-color: hsl(var(--brand-dark)); }
+  
+  /* New Brand Ring Colors */
+  .ring-cadmium { --tw-ring-color: hsl(var(--cadmium)); }
+  .ring-melon { --tw-ring-color: hsl(var(--melon)); }
+  .ring-slate { --tw-ring-color: hsl(var(--slate)); }
+  .ring-ink { --tw-ring-color: hsl(var(--ink)); }
+  .ring-mist { --tw-ring-color: hsl(var(--mist)); }
+  
+  /* Shade Utilities - Ring */
+  .ring-cadmium-100 { --tw-ring-color: var(--cadmium-100); }
+  .ring-cadmium-90 { --tw-ring-color: var(--cadmium-90); }
+  .ring-cadmium-80 { --tw-ring-color: var(--cadmium-80); }
+  .ring-cadmium-70 { --tw-ring-color: var(--cadmium-70); }
+  .ring-cadmium-60 { --tw-ring-color: var(--cadmium-60); }
+  .ring-cadmium-50 { --tw-ring-color: var(--cadmium-50); }
+  .ring-cadmium-40 { --tw-ring-color: var(--cadmium-40); }
+  .ring-cadmium-30 { --tw-ring-color: var(--cadmium-30); }
+  .ring-cadmium-20 { --tw-ring-color: var(--cadmium-20); }
+  .ring-cadmium-10 { --tw-ring-color: var(--cadmium-10); }
+
+  .ring-melon-100 { --tw-ring-color: var(--melon-100); }
+  .ring-melon-90 { --tw-ring-color: var(--melon-90); }
+  .ring-melon-80 { --tw-ring-color: var(--melon-80); }
+  .ring-melon-70 { --tw-ring-color: var(--melon-70); }
+  .ring-melon-60 { --tw-ring-color: var(--melon-60); }
+  .ring-melon-50 { --tw-ring-color: var(--melon-50); }
+  .ring-melon-40 { --tw-ring-color: var(--melon-40); }
+  .ring-melon-30 { --tw-ring-color: var(--melon-30); }
+  .ring-melon-20 { --tw-ring-color: var(--melon-20); }
+  .ring-melon-10 { --tw-ring-color: var(--melon-10); }
+
+  .ring-slate-100 { --tw-ring-color: var(--slate-100); }
+  .ring-slate-90 { --tw-ring-color: var(--slate-90); }
+  .ring-slate-80 { --tw-ring-color: var(--slate-80); }
+  .ring-slate-70 { --tw-ring-color: var(--slate-70); }
+  .ring-slate-60 { --tw-ring-color: var(--slate-60); }
+  .ring-slate-50 { --tw-ring-color: var(--slate-50); }
+  .ring-slate-40 { --tw-ring-color: var(--slate-40); }
+  .ring-slate-30 { --tw-ring-color: var(--slate-30); }
+  .ring-slate-20 { --tw-ring-color: var(--slate-20); }
+  .ring-slate-10 { --tw-ring-color: var(--slate-10); }
+  
+  /* Legacy Ring Colors */
+  .ring-primary-yellow { --tw-ring-color: hsl(var(--primary-yellow)); }
+  .ring-secondary-amber { --tw-ring-color: hsl(var(--secondary-amber)); }
+  .ring-tertiary-beige { --tw-ring-color: hsl(var(--tertiary-beige)); }
+  .ring-accent-olive { --tw-ring-color: hsl(var(--accent-olive)); }
+  .ring-accent-green { --tw-ring-color: hsl(var(--accent-green)); }
+  .ring-accent-brown { --tw-ring-color: hsl(var(--accent-brown)); }
+  .ring-accent-lime { --tw-ring-color: hsl(var(--accent-lime)); }
+  .ring-accent-magenta { --tw-ring-color: hsl(var(--accent-magenta)); }
+  .ring-brand-primary { --tw-ring-color: hsl(var(--brand-primary)); }
+  .ring-brand-secondary { --tw-ring-color: hsl(var(--brand-secondary)); }
+  .ring-brand-accent { --tw-ring-color: hsl(var(--brand-accent)); }
+  .ring-brand-neutral { --tw-ring-color: hsl(var(--brand-neutral)); }
+  .ring-brand-dark { --tw-ring-color: hsl(var(--brand-dark)); }
+  
+  /* New Brand Hover Variants */
+  .hover\:bg-cadmium:hover { background-color: hsl(var(--cadmium)); }
+  .hover\:bg-melon:hover { background-color: hsl(var(--melon)); }
+  .hover\:bg-slate:hover { background-color: hsl(var(--slate)); }
+  .hover\:bg-ink:hover { background-color: hsl(var(--ink)); }
+  .hover\:bg-mist:hover { background-color: hsl(var(--mist)); }
+  
+  .hover\:text-cadmium:hover { color: hsl(var(--cadmium)); }
+  .hover\:text-melon:hover { color: hsl(var(--melon)); }
+  .hover\:text-slate:hover { color: hsl(var(--slate)); }
+  .hover\:text-ink:hover { color: hsl(var(--ink)); }
+  .hover\:text-mist:hover { color: hsl(var(--mist)); }
+  
+  /* Legacy Hover Variants */
+  .hover\:bg-primary-yellow:hover { background-color: hsl(var(--primary-yellow)); }
+  .hover\:bg-secondary-amber:hover { background-color: hsl(var(--secondary-amber)); }
+  .hover\:bg-tertiary-beige:hover { background-color: hsl(var(--tertiary-beige)); }
+  .hover\:bg-accent-olive:hover { background-color: hsl(var(--accent-olive)); }
+  .hover\:bg-accent-green:hover { background-color: hsl(var(--accent-green)); }
+  .hover\:bg-accent-brown:hover { background-color: hsl(var(--accent-brown)); }
+  .hover\:bg-accent-lime:hover { background-color: hsl(var(--accent-lime)); }
+  .hover\:bg-accent-magenta:hover { background-color: hsl(var(--accent-magenta)); }
+  .hover\:bg-brand-primary:hover { background-color: hsl(var(--brand-primary)); }
+  .hover\:bg-brand-secondary:hover { background-color: hsl(var(--brand-secondary)); }
+  .hover\:bg-brand-accent:hover { background-color: hsl(var(--brand-accent)); }
+  .hover\:bg-brand-neutral:hover { background-color: hsl(var(--brand-neutral)); }
+  .hover\:bg-brand-dark:hover { background-color: hsl(var(--brand-dark)); }
+  
+  .hover\:text-primary-yellow:hover { color: hsl(var(--primary-yellow)); }
+  .hover\:text-secondary-amber:hover { color: hsl(var(--secondary-amber)); }
+  .hover\:text-tertiary-beige:hover { color: hsl(var(--tertiary-beige)); }
+  .hover\:text-accent-olive:hover { color: hsl(var(--accent-olive)); }
+  .hover\:text-accent-green:hover { color: hsl(var(--accent-green)); }
+  .hover\:text-accent-brown:hover { color: hsl(var(--accent-brown)); }
+  .hover\:text-accent-lime:hover { color: hsl(var(--accent-lime)); }
+  .hover\:text-accent-magenta:hover { color: hsl(var(--accent-magenta)); }
+  .hover\:text-brand-primary:hover { color: hsl(var(--brand-primary)); }
+  .hover\:text-brand-secondary:hover { color: hsl(var(--brand-secondary)); }
+  .hover\:text-brand-accent:hover { color: hsl(var(--brand-accent)); }
+  .hover\:text-brand-neutral:hover { color: hsl(var(--brand-neutral)); }
+  .hover\:text-brand-dark:hover { color: hsl(var(--brand-dark)); }
+  
+  /* Affairs Font Utilities */
+  .font-affairs { font-family: 'Affairs', serif; letter-spacing: 2px; }
+  .text-affairs { font-family: 'Affairs', serif; letter-spacing: 2px; }
+  .font-affairs-italic { font-family: 'Affairs', serif; font-style: italic; }
+  .text-affairs-italic { font-family: 'Affairs', serif; font-style: italic; }
+}
